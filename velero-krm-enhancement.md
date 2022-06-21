@@ -40,13 +40,16 @@ It will consist of initially making changes in current Infrastructure so that pa
 	 
  - First Part will consist of addition of KRM function logic in existing code where there is a  single resource being passed to the function. `ParseKubeObject()` can be used to covert the input from Valero Backup/Restore plugin in form of KubeObject and further operations can be performed on KubeObject. In this way we can assess if KRM functions work well with velero OADP Plugin.
 
- Diagram [Exisiting codebase]
+ <p align="center" width="100%">
+    <img width="70%" src="https://github.com/chaitanyab2311/velero-krm-enhancment/blob/main/velero-exisitng-addon.png">
+</p>
+
 
 - Second  Part will be development of a new plugin type `BackupItemsWithKRM` and `RestoreItemsWithKRM` that will allow a plugin author to take in a list of resources, execute KRM functions, and return a list of items with translated data to be included in the backup.
 
-
- Diagram [New Proposal]
-
+<p align="center" width="100%">
+    <img width="50%" src="https://github.com/chaitanyab2311/velero-krm-enhancment/blob/main/velero-new-design.png">
+</p>
 
 
 ### Phase 2 
