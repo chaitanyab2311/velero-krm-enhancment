@@ -8,7 +8,9 @@
 - [ ] User-facing documentation is created
 
 ### Open Questions 
+-  Can changes be made in exiting codebase as opposed to refactoring the whole code? 
 -  Whether adding in KRM functions is actually useful or will it affect the performance of current plugin in a negative manner?
+
 
 ### Summary
 
@@ -16,7 +18,7 @@ Currently Velero plugin framework is inefficient. It has to make on gRPC call to
 
 ### Motivation
 
-- Create a common set of KRM functions which are reusable.
+- To have a common set of KRM functions which are reusable.
 - Improving the performance of Velero backup-restore process by only having one grpc call and passing a list of resources as opposed to having one grpc call to backup/restore a resource. 
 
 ### Goals
@@ -34,7 +36,7 @@ Currently Velero plugin framework is inefficient. It has to make on gRPC call to
 The idea is divided into 2 phases.
 
  ### Phase 1 
-It will consist of initially making changes in current Infrastructure so that parity can be achieved with BackupActionItemType and RestoreActionItemType and prove that we can use KRM functions with Velero Plugins.
+It will consist of initially making changes in current Infrastructure so that parity can be achieved with BackupActionItemType and RestoreActionItemType and prove that we can use KRM functions with Velero Plugins.Futher Phase 1 is divided into two parts.
 	 
  - First Part will consist of addition of KRM function logic in existing code where there is a  single resource being passed to the function. `ParseKubeObject()` can be used to covert the input from Valero Backup/Restore plugin in form of KubeObject and further operations can be performed on KubeObject. In this way we can assess if KRM functions work well with velero OADP Plugin.
 
@@ -48,7 +50,7 @@ It will consist of initially making changes in current Infrastructure so that pa
 
 
 ### Phase 2 
- Modify the velero controller codebase to pass in to this plugin type a list of resources so that we achieve    performance enhancement by reducing the amount of plugin calls.
+ Modify the velero controller codebase to pass in to this plugin type a list of resources so that we achieve performance enhancement by reducing the amount of plugin calls.
 
 
 
